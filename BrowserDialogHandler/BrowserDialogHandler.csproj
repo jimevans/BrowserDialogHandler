@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9F8EB735-64E8-413F-A584-5AD579A1B306}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BrowserDialogHandler</RootNamespace>
+    <AssemblyName>BrowserDialogHandler</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Native\Windows\AccessibleRole.cs" />
+    <Compile Include="Native\Windows\WindowEnumerationMethod.cs" />
+    <Compile Include="Native\Windows\Linux\WindowManagerFrameExtents.cs" />
+    <Compile Include="Native\Windows\WindowShowStyle.cs" />
+    <Compile Include="WatchableObjectHandlerOfTWatchable.cs" />
+    <Compile Include="ExpectationOfTWatchable.cs" />
+    <Compile Include="DialogFactory.cs" />
+    <Compile Include="Dialogs\AlertDialog.cs" />
+    <Compile Include="Dialogs\ConfirmDialog.cs" />
+    <Compile Include="Dialogs\Dialog.cs" />
+    <Compile Include="Dialogs\FileLocationDialog.cs" />
+    <Compile Include="Dialogs\LogonDialog.cs" />
+    <Compile Include="Dialogs\RestoreSessionDialog.cs" />
+    <Compile Include="Dialogs\VBScriptAbortRetryIgnoreDialog.cs" />
+    <Compile Include="Dialogs\VBScriptMsgBoxDialog.cs" />
+    <Compile Include="Dialogs\VBScriptOkCancelDialog.cs" />
+    <Compile Include="Dialogs\VBScriptOkOnlyDialog.cs" />
+    <Compile Include="Dialogs\VBScriptRetryCancelDialog.cs" />
+    <Compile Include="Dialogs\VBScriptYesNoCancelDialog.cs" />
+    <Compile Include="Dialogs\VBScriptYesNoDialog.cs" />
+    <Compile Include="DialogWatcher.cs" />
+    <Compile Include="Exceptions\DialogHandlerTimeoutException.cs" />
+    <Compile Include="Exceptions\DialogHandlerException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Expectation.cs" />
+    <Compile Include="HandleableAttribute.cs" />
+    <Compile Include="INativeDialog.cs" />
+    <Compile Include="INativeDialogManager.cs" />
+    <Compile Include="IWatchable.cs" />
+    <Compile Include="IWatcher.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Loggers\ConsoleLogger.cs" />
+    <Compile Include="Loggers\BaseLogger.cs" />
+    <Compile Include="Loggers\NullLogger.cs" />
+    <Compile Include="LogLevel.cs" />
+    <Compile Include="NativeDialog.cs" />
+    <Compile Include="NativeDialogConstants.cs" />
+    <Compile Include="NativeDialogDismissedEventArgs.cs" />
+    <Compile Include="NativeDialogFoundEventArgs.cs" />
+    <Compile Include="Native\DialogManager.cs" />
+    <Compile Include="Native\Firefox\Dialogs\FFJavaScriptDialog.cs" />
+    <Compile Include="Native\Firefox\Dialogs\FFLogonDialog.cs" />
+    <Compile Include="Native\Firefox\Dialogs\FFRestoreSessionDialog.cs" />
+    <Compile Include="Native\Firefox\FFDialogManager.cs" />
+    <Compile Include="Native\InternetExplorer\Dialogs\IEJavaScriptDialog.cs" />
+    <Compile Include="Native\InternetExplorer\Dialogs\IELogonDialog.cs" />
+    <Compile Include="Native\InternetExplorer\Dialogs\IEVBScriptDialog.cs" />
+    <Compile Include="Native\InternetExplorer\IEDialogManager.cs" />
+    <Compile Include="Native\Windows\AssistiveTechnologyObject.cs" />
+    <Compile Include="Native\Windows\AccessibleState.cs" />
+    <Compile Include="Native\Windows\Linux\AtSpi.cs" />
+    <Compile Include="Native\Windows\Linux\AtSpiObject.cs" />
+    <Compile Include="Native\Windows\Linux\X11Window.cs" />
+    <Compile Include="Native\Windows\Linux\X11WindowsNativeMethods.cs" />
+    <Compile Include="Native\Windows\Linux\XServerConnection.cs" />
+    <Compile Include="Native\Windows\Microsoft\MsaaObject.cs" />
+    <Compile Include="Native\Windows\Microsoft\MsWindowsEnumerator.cs" />
+    <Compile Include="Native\Windows\Microsoft\MsWindowsNativeMethods.cs" />
+    <Compile Include="Native\Windows\Microsoft\MsWindowsWindow.cs" />
+    <Compile Include="Native\Windows\Window.cs" />
+    <Compile Include="Native\Windows\WindowFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UtilityClasses\SimpleTimer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UtilityClasses\TryUntilTimeoutExecutor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WatchableObjectHandler.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
