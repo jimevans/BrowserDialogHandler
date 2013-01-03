@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BrowserType.cs" />
     <Compile Include="Native\Windows\AccessibleRole.cs" />
     <Compile Include="Native\Windows\WindowEnumerationMethod.cs" />
     <Compile Include="Native\Windows\Linux\WindowManagerFrameExtents.cs" />
@@ -114,6 +115,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="WatchableObjectHandler.cs" />
+    <Compile Include="WatcherFactory.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
